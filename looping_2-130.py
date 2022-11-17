@@ -30,15 +30,16 @@ cubed_list = []
 
 def loopingthroughnumbers():
     for num in range(MINVALUE, MAXVALUE+1):
+        sqaure_rt = round(math.sqrt(num))
+        cubed_rt = round(num**(1/3))
         if (num % 2 == 0):
             even_list.append(num)
         if (num % 2 == 1):
             odd_list.append(num)
-        sqaure_rt = int(math.sqrt(num))
         if (sqaure_rt * sqaure_rt == num):
             squared_list.append(num)
-        # if (num**(1/3) == 0):
-        #     cubed_list.append(num)
+        if (cubed_rt * cubed_rt * cubed_rt == num):
+            cubed_list.append(num)
 
 
 loopingthroughnumbers()
@@ -47,5 +48,4 @@ print("Checking numbers from 2 to 130")
 print(f"Odd ({len(odd_list)}) : {odd_list[0]}...{odd_list[-1]}")
 print(f"Even ({len(even_list)}) : {even_list[0]}...{even_list[-1]}")
 print(f"Square ({len(squared_list)}) : {squared_list}")
-
-# print(f"Cube ({len(cubed_list)}) : {cubed_list[0]}...{cubed_list[-1]}")
+print(f"Cube ({len(cubed_list)}) : {cubed_list}")
