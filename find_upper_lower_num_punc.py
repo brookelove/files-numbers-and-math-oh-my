@@ -14,14 +14,14 @@ upper = []
 lower = []
 digits = []
 punc = []
-u = 0
-l = 0
-d = 0
-p = 0
+
 sentences = re.split(' . ', docstring)
 
 for i in sentences:
-
+    u = 0
+    l = 0
+    d = 0
+    p = 0
     # print(i)  # returns each sentenece with.
     # print(type(i))
     current_sentence = list(i)
@@ -34,7 +34,11 @@ for i in sentences:
             d += 1
         elif j in string.punctuation:
             p += 1
-print(u)
-print(l)
-print(d)
-print(p)
+    upper.append(u)
+    lower.append(l)
+    digits.append(d)
+    punc.append(p)
+print(upper)
+print(lower)
+print(digits)
+print(punc)
