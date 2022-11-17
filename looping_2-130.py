@@ -19,3 +19,35 @@
         b. take the num and cube the number if it returns 0 
         c. append that to the cubed list
 '''
+import math
+MINVALUE = 2
+MAXVALUE = 130
+odd_list = []
+even_list = []
+squared_list = []
+cubed_list = []
+
+
+def loopingthroughnumbers():
+    for num in range(MINVALUE, MAXVALUE+1):
+        if (num % 2 == 0):
+            even_list.append(num)
+        if (num % 2 == 1):
+            odd_list.append(num)
+        # if (math.sqrt(num) == 0.0):
+        #     squared_list.append(num)
+        # if (num**(1/3) == 0):
+        #     cubed_list.append(num)
+
+
+loopingthroughnumbers()
+
+print("Checking numbers from 2 to 130")
+print(f"Odd ({len(odd_list)}) : {odd_list[0]}...{odd_list[-1]}")
+print(f"Even ({len(even_list)}) : {even_list[0]}...{even_list[-1]}")
+print(f"Square ({len(squared_list)}) : {squared_list}")
+print(str(math.sqrt(64) % 2))
+print(str(round(8**(1/3) % 3)))
+
+
+# print(f"Cube ({len(cubed_list)}) : {cubed_list[0]}...{cubed_list[-1]}")
