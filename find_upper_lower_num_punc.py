@@ -10,10 +10,13 @@
 import re
 import string
 docstring = '''I love to code with python. I love having three dogs with me. I want to learn how to make bread.'''
-upper = []
-lower = []
-digits = []
-punc = []
+character_dict = {"Uppercase": [], "Lowercase": [],
+                  "Digits": [], "Punctuation": []}
+upper_list = []
+lower_list = []
+digit_list = []
+punc_list = []
+
 
 sentences = re.split(' . ', docstring)
 
@@ -34,11 +37,20 @@ for i in sentences:
             d += 1
         elif j in string.punctuation:
             p += 1
-    upper.append(u)
-    lower.append(l)
-    digits.append(d)
-    punc.append(p)
-print(upper)
-print(lower)
-print(digits)
-print(punc)
+    upper_list.append(u)
+    lower_list.append(l)
+    digit_list.append(d)
+    punc_list.append(p)
+
+character_dict["Uppercase"] += upper_list
+character_dict["Lowercase"] += lower_list
+character_dict["Digits"] += digit_list
+character_dict["Punctuation"] += punc_list
+print(character_dict["Uppercase"][0])
+print(f'''  
+sentences :  uppercase  lowercase  digits  punctuation
+---------    ---------  ---------  ------  ----------- 
+1         |     {character_dict["Uppercase"][0]}      |    {character_dict["Lowercase"][0]}    |   {character_dict["Digits"][0]}  |      {character_dict["Punctuation"][0]}
+2         |     {character_dict["Uppercase"][1]}      |    {character_dict["Lowercase"][1]}    |   {character_dict["Digits"][1]}  |      {character_dict["Punctuation"][1]}
+3         |     {character_dict["Uppercase"][2]}      |    {character_dict["Lowercase"][2]}    |   {character_dict["Digits"][2]}  |      {character_dict["Punctuation"][2]}
+  ''')
