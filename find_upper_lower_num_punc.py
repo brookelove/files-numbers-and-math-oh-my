@@ -10,23 +10,31 @@
 import re
 import string
 docstring = '''I love to code with python. I love having three dogs with me. I want to learn how to make bread.'''
-upper = 0
-lower = 0
-digits = 0
-punc = 0
-i = 0
+upper = []
+lower = []
+digits = []
+punc = []
+u = 0
+l = 0
+d = 0
+p = 0
 sentences = re.split(' . ', docstring)
 
 for i in sentences:
+
     # print(i)  # returns each sentenece with.
     # print(type(i))
-    placeholder_sentence = list(i)
-    # for j in i:
-    #     if j in string.ascii_lowercase:
-    #         lower += 1
-    #     if j in string.ascii_uppercase:
-    #         upper += 1
-    #     if j in string.digits:
-    #         digits += 1
-    #     if j in string.punctuation:
-    #         punc += 1
+    current_sentence = list(i)
+    for j in current_sentence:
+        if j in string.ascii_lowercase:
+            l += 1
+        elif j in string.ascii_uppercase:
+            u += 1
+        elif j in string.digits:
+            d += 1
+        elif j in string.punctuation:
+            p += 1
+print(u)
+print(l)
+print(d)
+print(p)
