@@ -46,9 +46,8 @@ character_dict["Uppercase"] += upper_list
 character_dict["Lowercase"] += lower_list
 character_dict["Digits"] += digit_list
 character_dict["Punctuation"] += punc_list
-print(character_dict["Uppercase"][0])
 print(f'''  
-sentences :  uppercase  lowercase  digits  punctuation
+sentences  uppercase  lowercase  digits  punctuation
 ---------    ---------  ---------  ------  ----------- 
 1         |     {character_dict["Uppercase"][0]}      |    {character_dict["Lowercase"][0]}    |   {character_dict["Digits"][0]}  |      {character_dict["Punctuation"][0]}
 2         |     {character_dict["Uppercase"][1]}      |    {character_dict["Lowercase"][1]}    |   {character_dict["Digits"][1]}  |      {character_dict["Punctuation"][1]}

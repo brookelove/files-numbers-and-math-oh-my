@@ -10,20 +10,20 @@
 '''
 
 
-def check_increment():
-
-    while True:
-        user_input = input("Please enter a 3-digit: ")
-        placeholder = list(user_input)
-        # print(placeholder)  # prints ['4', '5', '6']
-
-        if '.' in str(user_input):
-            print("---> Error: This is not an integer. Please re-enter.")
-        elif len(placeholder) > 3:
-            print("---> Error: You did not enter a 3-digit number")
-        else:
-            print("Number Accepted!")
-            break
+def duplication(num):
+    pass
 
 
-check_increment()
+while True:
+    user_input = input("Please enter a 3-digit: ")
+    placeholder = list(user_input)
+    # print(placeholder)  # prints ['4', '5', '6']
+    if float(user_input) == True:
+        print("---> Error: This is not an integer. Please re-enter.")
+        continue
+    elif len(placeholder) > 3:
+        print("---> Error: You did not enter a 3-digit number")
+        continue
+    else:
+        print("Number Accepted!")
+        break
