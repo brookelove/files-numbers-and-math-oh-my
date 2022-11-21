@@ -13,10 +13,23 @@
     b. this or an error message 
     c. do not include the output 
 '''
-import os
-f_1 = "cs412_3_4_input.txt"
-text_file = open("f_1", 'r')
+import sys
 
-with open('f_1') as text_file:
-    data = text_file.readlines()
-    print(data)
+
+class CannotOpenFile(Exception):
+    pass
+
+
+READFILE = "cs412_3_4_input.txt"
+MAX_WORDDS = 20
+MAX_WORDS_PER_LINE = 5
+WRITE_FILE = "cs412_3_4_output.txt"
+# 1. open file using a try-catch block
+try:
+    text_file = open(READFILE, "r")
+except CannotOpenFile:
+    print(f"--> Error: Cannot open file {READFILE}")
+# 2. Make it readable
+all_data = text_file.readlines()
+print(all_data)
+# 3. convert data to a list of all of the words, remove
