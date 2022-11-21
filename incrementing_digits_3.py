@@ -28,8 +28,9 @@ class NotAscending(Exception):
     pass
 
 
-def checking_for_duplication(my_lst):
+def checking_for_duplication(num):
     i = 0
+    my_lst = list(num)
     for i in len(my_lst):
         j = i + 1
         if my_lst[i] == my_lst[j]:
@@ -40,27 +41,25 @@ def checking_for_duplication(my_lst):
             return True
 
 
-def ascendingNumber():
+def check_if_ascending():
     user_input = input('Enter a Number: ')
-    # int_user_input = int(user_input)
-    lst_user_input = list(user_input)
-    if lst_user_input[0] < lst_user_input[1] and lst_user_input[1] < lst_user_input[2] and len(lst_user_input) == 3:
+    if list(user_input[0]) < list(user_input[1]) < list(user_input[2]):
         return user_input
-    elif float(user_input) or str(user_input):
-        raise NonInteger
-    elif len(lst_user_input) > 3:
-        raise OutofBounds
-    elif lst_user_input[0] > lst_user_input[1] or lst_user_input[1] > lst_user_input[2]:
-        raise NotAscending
-    elif checking_for_duplication(lst_user_input):
+    elif check_if_ascending(user_input) == False:
         raise Duplication
+    elif list(user_input[0]) > list(user_input[1]) or list(user_input[1]) > list(user_input[2]):
+        raise NotAscending
+    elif user_input != type(int):
+        raise NonInteger
+    elif len(list(user_input)) > 3:
+        raise OutofBounds
 
 
 def main():
     complete = False
     while not complete:
         try:
-            ascendingNumber()
+            check_if_ascending()
             print("Number Accepted!")
             complete = True
         except Duplication:
