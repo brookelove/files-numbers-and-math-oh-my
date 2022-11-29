@@ -1,5 +1,8 @@
 # try block for opening the file and have an except if it can not open
 # open the text file
+import string
+
+
 class CannotOpenFile(Exception):
     pass
 
@@ -16,8 +19,15 @@ for line in text_file:
     # print(line)  #prints our ever line on the textfile!
     # use use .strip() take off the \n , and .
     remove_extra_char = line.strip(".,\n")
+    print(remove_extra_char)
+    remove_extra_char = remove_extra_char.replace(",", "")
+    print(remove_extra_char)
     # print(remove_new_line)  # prints new line with no \n at the end of it
     split_line = remove_extra_char.split(' ')
+    # print(split_line)
+    # for line in range(len(split_line)):
+    #     if ',' in split_line[line];
+    #         split_line =
     # join together the first two words to get one name
     split_line[0:2] = [' '.join(split_line[0:2])]
 
